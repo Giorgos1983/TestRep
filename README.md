@@ -2,6 +2,16 @@
 **Note:** In order to automatically install all the libraries needed to run those tests run the following command:
 >pip install -r requirements.txt
 
+There is also the option to run the dockerized pipeline on every push or manually by selecting **Run workflow** ![image](https://user-images.githubusercontent.com/22115159/232199469-31d24c0b-8bd4-4bbe-b2fb-9b465a123bd6.png)
+
+In order to skip running the pipeline on every push the 
+>[ci skip]
+
+command should be entered in the end of each commit message.
+>e.g. first commit [ci skip]
+
+
+
 
 Functional test suite:
 
