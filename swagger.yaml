@@ -1,0 +1,142 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Star Wars API'
+  description: 'API providing information about characters, planets, and starships from the Star Wars universe.'
+host: 'example.com'
+schemes:
+  - 'https'
+basePath: '/v1'
+produces:
+  - 'application/json'
+
+paths:
+  /people/{id}:
+    get:
+      summary: 'Get a person by ID'
+      description: 'Returns detailed information about a person.'
+      parameters:
+        - name: 'id'
+          in: 'path'
+          required: true
+          type: 'integer'
+          format: 'int64'
+          description: 'ID of the person to retrieve'
+      responses:
+        200:
+          description: 'A person object'
+          schema:
+            $ref: '#/definitions/Person'
+        404:
+          description: 'Person not found'
+
+  /planets/{id}:
+    get:
+      summary: 'Get a planet by ID'
+      description: 'Returns detailed information about a planet.'
+      parameters:
+        - name: 'id'
+          in: 'path'
+          required: true
+          type: 'integer'
+          format: 'int64'
+          description: 'ID of the planet to retrieve'
+      responses:
+        200:
+          description: 'A planet object'
+          schema:
+            $ref: '#/definitions/Planet'
+        404:
+          description: 'Planet not found'
+
+  /starships/{id}:
+    get:
+      summary: 'Get a starship by ID'
+      description: 'Returns detailed information about a starship.'
+      parameters:
+        - name: 'id'
+          in: 'path'
+          required: true
+          type: 'integer'
+          format: 'int64'
+          description: 'ID of the starship to retrieve'
+      responses:
+        200:
+          description: 'A starship object'
+          schema:
+            $ref: '#/definitions/Starship'
+        404:
+          description: 'Starship not found'
+
+definitions:
+  Person:
+    type: 'object'
+    properties:
+      name:
+        type: 'string'
+      height:
+        type: 'string'
+      mass:
+        type: 'string'
+      hair_color:
+        type: 'string'
+      skin_color:
+        type: 'string'
+      eye_color:
+        type: 'string'
+      birth_year:
+        type: 'string'
+      gender:
+        type: 'string'
+
+  Planet:
+    type: 'object'
+    properties:
+      name:
+        type: 'string'
+      rotation_period:
+        type: 'string'
+      orbital_period:
+        type: 'string'
+      diameter:
+        type: 'string'
+      climate:
+        type: 'string'
+      gravity:
+        type: 'string'
+      terrain:
+        type: 'string'
+      surface_water:
+        type: 'string'
+      population:
+        type: 'string'
+
+  Starship:
+    type: 'object'
+    properties:
+      name:
+        type: 'string'
+      model:
+        type: 'string'
+      manufacturer:
+        type: 'string'
+      cost_in_credits:
+        type: 'string'
+      length:
+        type: 'string'
+      max_atmosphering_speed:
+        type: 'string'
+      crew:
+        type: 'string'
+      passengers:
+        type: 'string'
+      cargo_capacity:
+        type: 'string'
+      consumables:
+        type: 'string'
+      hyperdrive_rating:
+        type: 'string'
+      MGLT:
+        type: 'string'
+      starship_class:
+        type: 'string'

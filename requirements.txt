@@ -14,3 +14,4 @@ robotframework-requests==0.9.4
 robotframework-extendedrequestslibrary==0.5.5
 urllib3==1.26.6
 Werkzeug==2.2.3
+PyYAML==5.4.1
