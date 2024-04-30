@@ -11,7 +11,7 @@ def create_test_cases(swagger_file, output_file):
     try:
         with open(swagger_file, 'r') as file:
             swagger_data = yaml.safe_load(file)
-        paths = swagger_data['paths']  # Assuming this is the correct location of endpoints in your swagger.yaml
+        paths = swagger_data['paths']
     except FileNotFoundError:
         print("Error: The specified swagger file does not exist.")
         sys.exit(1)
@@ -31,7 +31,7 @@ def create_test_cases(swagger_file, output_file):
             for path, methods in paths.items():
                 for method in methods:
                     if method == 'get':
-                        formatted_path = path.replace('{id}', '1')  # Ensure this placeholder matches your swagger.yaml
+                        formatted_path = path.replace('{id}', '1')
                         test_name = formatted_path.replace('/', ' ').strip().title().replace(' ', '_')
                         file.write(f"{test_name}\n")
                         file.write("    [Documentation]    Test GET request for endpoint\n")
